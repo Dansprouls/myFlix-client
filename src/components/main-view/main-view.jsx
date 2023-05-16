@@ -10,7 +10,7 @@ export const MainView = () => {
 
   //figure out correct format
   useEffect(() => {
-    fetch("https://star-wars-myflix-1632.herokuapp.com/movies")
+    fetch('https://star-wars-myflix-1632.herokuapp.com/movies')
     .then((response) => response.json().then(result => {
       setMovies(result)
     }))

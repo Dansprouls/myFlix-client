@@ -1,6 +1,7 @@
 import {useState} from "react";
 
 export const LoginView = ({onLoggedIn}) => {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,13 +10,16 @@ export const LoginView = ({onLoggedIn}) => {
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password
+      username: username,
+      password: password
     };
 
     //make sure this is the correct url
     fetch("https://star-wars-myflix-1632.herokuapp.com/login", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(data)
     }).then((response) => {
       if (response.ok) {
@@ -33,18 +37,14 @@ export const LoginView = ({onLoggedIn}) => {
         <input 
         type="text"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-        />
+        onChange={(e) => setUsername(e.target.value)} />
       </label>
       <label>
         Password:
         <input 
         type="password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        />
+        onChange={(e) => setPassword(e.target.value)} />
       </label>
       <button type="submit">Submit</button>
     </form>
