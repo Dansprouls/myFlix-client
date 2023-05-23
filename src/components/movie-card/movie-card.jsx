@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
+import { Button, Card } from "react-bootstrap";
 
 // props being destructured
-export const MovieCard = ({ movie, onMovieClick }) => {
+/* export const MovieCard = ({ movie, onMovieClick }) => {
   return (
     <div
       onClick={() => {
@@ -10,6 +11,22 @@ export const MovieCard = ({ movie, onMovieClick }) => {
     >
       {movie.title}
     </div>
+  );
+}; */
+
+import "./movie-card.scss";
+
+export const MovieCard = ({ movie, onMovieClick }) => {
+  return (
+    <Card onClick={() => onMovieClick(movie)} className="h-100">
+      <Card.Img variant="top" src={movie.imageURL} />
+      <Card.Body className="card-body">
+        <Card.Title>{movie.title}</Card.Title>
+        <Card.Text>{movie.director.name}</Card.Text>
+        <Button style={{ color: "white"}} onClick={() => onMovieClick(movie)} variant="link">Open
+        </Button>
+      </Card.Body>
+    </Card>
   );
 };
 

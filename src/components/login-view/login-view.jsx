@@ -1,4 +1,6 @@
 import {useState} from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export const LoginView = ({onLoggedIn}) => {
 
@@ -13,21 +15,6 @@ export const LoginView = ({onLoggedIn}) => {
       username: username,
       password: password
     };
-
-    //make sure this is the correct url
-    /*fetch("https://star-wars-myflix-1632.herokuapp.com/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    }).then((response) => {
-      if (response.ok) {
-        onLoggedIn(username);
-      } else {
-        alert("Login failed");
-      }
-    }); */
 
     fetch("https://star-wars-myflix-1632.herokuapp.com/login", {
       method: "POST",
@@ -53,7 +40,7 @@ export const LoginView = ({onLoggedIn}) => {
 
   };
 
-  return(
+  /* return(
     <form onSubmit={handleSubmit}>
       <label>
         Username:
@@ -73,5 +60,32 @@ export const LoginView = ({onLoggedIn}) => {
       </label>
       <button type="submit">Submit</button>
     </form>
+  ); */
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Form.Group controlID="formUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control 
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          minLength="3"
+        />
+      </Form.Group>
+      <Form.Group controlID="formPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control 
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 };

@@ -1,5 +1,10 @@
-$color: steelblue;
+/*$color: steelblue;
 
 .my-flix {
   color: $color;
-}
+}*/
+
+$primary: SteelBlue;
+$body-bg: snow;
+
+@import '~bootstrap/scss/bootstrap.scss';
