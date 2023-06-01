@@ -3,10 +3,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 export const SignupView = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [birthday, setBirthday] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,21 +15,21 @@ export const SignupView = () => {
       username: username,
       password: password,
       email: email,
-      birthday: birthday
+      birthday: birthday,
     };
 
     fetch("https://star-wars-myflix-1632.herokuapp.com/users", {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
     }).then((response) => {
-      if(response.ok){
-        alert('Signup Successful!');
+      if (response.ok) {
+        alert("Signup Successful!");
         window.location.reload();
       } else {
-        alert('Signup Failed');
+        alert("Signup Failed");
       }
     });
   };
@@ -41,9 +41,9 @@ export const SignupView = () => {
         <Form.Control
           type="text"
           value={username}
-          onChange= {(e) => setUsername(e.target.value)} 
+          onChange={(e) => setUsername(e.target.value)}
           required
-          minLength='3'
+          minLength="3"
         />
       </Form.Group>
       <Form.Group controlId="formPassword">
@@ -51,7 +51,7 @@ export const SignupView = () => {
         <Form.Control
           type="password"
           value={password}
-          onChange= {(e) => setPassword(e.target.value)} 
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
       </Form.Group>
@@ -60,7 +60,7 @@ export const SignupView = () => {
         <Form.Control
           type="email"
           value={email}
-          onChange= {(e) => setEmail(e.target.value)} 
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
       </Form.Group>
@@ -69,7 +69,7 @@ export const SignupView = () => {
         <Form.Control
           type="date"
           value={birthday}
-          onChange= {(e) => setBirthday(e.target.value)} 
+          onChange={(e) => setBirthday(e.target.value)}
           required
         />
       </Form.Group>

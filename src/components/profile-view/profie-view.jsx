@@ -100,7 +100,11 @@ export const ProfileView = ({
                   <Card.Body>
                     <p>Username: {user.username}</p>
                     <p>Email: {user.email}</p>
-                    <p>Date of Birth: {user.birthday.slice(0, 10)}</p>
+                    {user.birthday ? (
+                      <p>Date of Birth: {user.birthday.slice(0, 10)}</p>
+                    ) : (
+                      <p>Date of Birth: n/a</p>
+                    )}
                   </Card.Body>
                 </Card>
                 <Button
