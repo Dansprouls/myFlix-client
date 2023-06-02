@@ -1,32 +1,35 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import "./navigation-bar.scss";
+
 export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" className="navbar-style">
       <Container>
-        <Navbar.Brand as={ Link } to="/">
+        <Navbar.Brand as={Link} to="/">
           myFlix - Star Wars
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
-          <Nav className="me-auto">
+          <Nav className="me-auto" />
+          <Nav className="justify-center-end">
             {!user && (
               <>
-                <Nav.Link as={ Link } to="/login">
+                <Nav.Link as={Link} to="/login">
                   Login
                 </Nav.Link>
-                <Nav.Link as={ Link } to="/signup">
+                <Nav.Link as={Link} to="/signup">
                   Signup
                 </Nav.Link>
               </>
             )}
             {user && (
               <>
-                <Nav.Link as={ Link } to="/">
+                <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link as={ Link } to="/profile"> 
+                <Nav.Link as={Link} to="/profile">
                   Profile
                 </Nav.Link>
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
@@ -36,5 +39,5 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
-}
+  );
+};

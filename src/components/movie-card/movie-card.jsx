@@ -7,13 +7,13 @@ import "./movie-card.scss";
 
 export const MovieCard = ({ movie }) => {
   return (
-    <Card className="h-100">
+    <Card className="h-100 movie-card">
       <Card.Img variant="top" src={movie.imageURL} />
       <Card.Body className="card-body">
-        <Card.Title>{movie.title}</Card.Title>
-        <Card.Text>{movie.director.name}</Card.Text>
-        <Link to={`/movies/${encodeURIComponent(movie._id)}`} >
-          <Button style={{ color: "white"}} variant="link">Open</Button>
+        <Card.Title style={{ color: "black" }}>{movie.title}</Card.Title>
+        <Card.Text style={{ color: "black" }}>{movie.director.name}</Card.Text>
+        <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+          <Button className="open-btn">Open</Button>
         </Link>
       </Card.Body>
     </Card>
@@ -26,17 +26,17 @@ MovieCard.propTypes = {
     description: PropTypes.string.isRequired,
     genre: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
+      description: PropTypes.string.isRequired,
     }),
     director: PropTypes.shape({
       name: PropTypes.string.isRequired,
       bio: PropTypes.string.isRequired,
       birthyear: PropTypes.string.isRequired,
-      deathyear: PropTypes.string.isRequired
+      deathyear: PropTypes.string.isRequired,
     }),
     imageURL: PropTypes.string,
-    featured: PropTypes.bool.isRequired
-  }).isRequired
+    featured: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 /*

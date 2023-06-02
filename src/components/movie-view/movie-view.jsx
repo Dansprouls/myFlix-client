@@ -10,58 +10,66 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
 
   const movie = movies.find((m) => m._id === movieId); //movie is equal to the the instance "m" in the movies array that matched the movieId in the URL
 
-  const [ isFavMovie, setIsFavMovie ] = useState(user?.favoriteMovies?.includes(movie?._id) || false);
+  const [isFavMovie, setIsFavMovie] = useState(
+    user?.favoriteMovies?.includes(movie?._id) || false
+  );
 
   useEffect(() => {
     setIsFavMovie(user?.favoriteMovies?.includes(movie?._id) || false);
-    window.scrollTo(0,0); //whats happening here?
-  }, [movieId])
+    window.scrollTo(0, 0); //whats happening here?
+  }, [movieId]);
 
   const addFavMovie = () => {
-    fetch(`https://star-wars-myflix-1632.herokuapp.com/users/${user.username}/movies/${movieId}`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        alert("Failed to add movie to Favorites")
-        return false; //needed?
+    fetch(
+      `https://star-wars-myflix-1632.herokuapp.com/users/${user.username}/movies/${movieId}`,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
       }
-    })
-    .then(user => {
-      alert("Successfully added movie to Favorites!");
-      setIsFavMovie(true);
-      updateUser(user);
-    })
-    .catch(e => {
-      alert(e);
-    });
-  }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert("Failed to add movie to Favorites");
+          return false; //needed?
+        }
+      })
+      .then((user) => {
+        alert("Successfully added movie to Favorites!");
+        setIsFavMovie(true);
+        updateUser(user);
+      })
+      .catch((e) => {
+        alert(e);
+      });
+  };
 
   const removeFavMovie = () => {
-    fetch(`https://star-wars-myflix-1632.herokuapp.com/users/${user.username}/movies/${movieId}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        alert("Failed to remove movie from Favorites")
-        return false; //needed?
+    fetch(
+      `https://star-wars-myflix-1632.herokuapp.com/users/${user.username}/movies/${movieId}`,
+      {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
       }
-    })
-    .then(user => {
-      alert("Successfully deleted movie from Favorites!");
-      setIsFavMovie(false);
-      updateUser(user);
-    })
-    .catch(e => {
-      alert(e);
-    });
-  }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          alert("Failed to remove movie from Favorites");
+          return false; //needed?
+        }
+      })
+      .then((user) => {
+        alert("Successfully deleted movie from Favorites!");
+        setIsFavMovie(false);
+        updateUser(user);
+      })
+      .catch((e) => {
+        alert(e);
+      });
+  };
 
   return (
     <div>
@@ -105,12 +113,9 @@ export const MovieView = ({ movies, user, token, updateUser }) => {
         <span>{movie.featured}</span>
       </div>
       <Link to={`/`}>
-        <button
-        className="back-button"
-        style={{ cursor: "pointer"}}
-      >
-        Back
-      </button>
+        <button className="back-button" style={{ cursor: "pointer" }}>
+          Back
+        </button>
       </Link>
       {isFavMovie ? (
         <Button variant="danger" className="ms-2" onClick={removeFavMovie}>

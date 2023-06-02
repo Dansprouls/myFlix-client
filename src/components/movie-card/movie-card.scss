@@ -1,3 +1,21 @@
-.card-body {
-  background-color: rgba(70, 130, 180, .8);
+.movie-card {
+  border: 2px solid #ffe81f !important;
+  /*box-shadow: 2px 2px 4px #ffe81f;*/
+}
+
+.movie-card .card-body {
+  background-color: #ffe81f;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.open-btn {
+  background-color: black !important;
+  color: white !important;
+  position: relative;
+  width: 100%;
+  align-self: center;
+  margin-top: auto;
 }

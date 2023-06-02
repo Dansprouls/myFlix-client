@@ -3,6 +3,8 @@ import { MovieCard } from "../movie-card/movie-card";
 import { useState, useEffect } from "react";
 import bcrypt from "bcryptjs";
 
+import "./profile-view.scss";
+
 export const ProfileView = ({
   user,
   token,
