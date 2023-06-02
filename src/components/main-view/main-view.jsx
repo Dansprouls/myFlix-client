@@ -36,7 +36,7 @@ export const MainView = () => {
         setMovies(result);
       })
     );
-  }, [token]);
+  }, [token]); // dependency array; ensures fetch is called every time token changes
 
   return (
     <BrowserRouter>

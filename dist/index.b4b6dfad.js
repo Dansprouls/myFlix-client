@@ -27198,7 +27198,7 @@ const MainView = ()=>{
             }));
     }, [
         token
-    ]);
+    ]); // dependency array; ensures fetch is called every time token changes
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navigationBar.NavigationBar), {
