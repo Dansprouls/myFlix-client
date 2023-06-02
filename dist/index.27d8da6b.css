@@ -60,7 +60,61 @@ img {
   padding: 2rem;
 }
 
+.card-body {
+  background-color: #000;
+  border: 2px solid #ffe81f;
+}
 
+.update-form {
+  background-color: #232b2b;
+  border: 2px solid #ffe81f;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.user-info-button {
+  width: 100%;
+  align-self: center;
+  margin-top: auto;
+  position: relative;
+}
+
+.card {
+  border: none;
+  background-color: #000 !important;
+}
+
+.user-info-section {
+  text-align: center;
+  background-color: #232b2b;
+  border: none;
+  padding: 2rem;
+}
+
+.user-info-section-card {
+  border: none !important;
+}
+
+.user-info-card {
+  background-color: #232b2b;
+  border: 2px solid #ffe81f;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.update-user-info-button {
+  width: 100%;
+  align-self: center;
+  margin-top: auto;
+  position: relative;
+}
+
+.card-title {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+}
 
 .navbar {
   width: 100%;
@@ -71,6 +125,7 @@ img {
   -webkit-text-stroke-width: .8px;
   -webkit-text-stroke-color: #ffe81f;
   font-size: 40px;
+  font-style: italic;
 }
 
 .navbar .nav-link {
@@ -95,6 +150,7 @@ img {
   text-align: center;
   color: #ffe81f;
   margin: auto;
+  font-style: italic;
   font-weight: 700;
 }
 

@@ -1,3 +1,59 @@
 /*.form-control {
   color: white !important;
 }*/
+
+.card-body {
+  background-color: black;
+  border: 2px solid #ffe81f;
+}
+
+.update-form {
+  background-color: #232b2b;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 2px solid #ffe81f;
+}
+
+.user-info-button {
+  position: relative;
+  width: 100%;
+  align-self: center;
+  margin-top: auto;
+}
+
+.card {
+  background-color: black !important;
+  border: none;
+}
+
+.user-info-section {
+  background-color: #232b2b;
+  padding: 2rem;
+  border: none;
+  text-align: center;
+}
+
+.user-info-section-card {
+  border: none !important;
+}
+
+.user-info-card {
+  background-color: #232b2b;
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 2px solid #ffe81f;
+}
+
+.update-user-info-button {
+  position: relative;
+  width: 100%;
+  align-self: center;
+  margin-top: auto;
+}
+
+.card-title {
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: 700 !important;
+  font-size: 30px !important;
+}
