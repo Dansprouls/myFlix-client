@@ -6,9 +6,9 @@ This is a React Single Page React Application (SPA) that was built for Achieveme
 
 ## Languages, Libraries, Frameworks, Tools Used:
 
--HTML
--SCSS
--JavaScript
--React
--Bootstrap
--Parcel
+- HTML
+- SCSS
+- JavaScript
+- React
+- Bootstrap
+- Parcel
