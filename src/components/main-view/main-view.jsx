@@ -145,7 +145,13 @@ export const MainView = () => {
                       Away...
                     </h2>
                     {filteredMovies.map((movie) => (
-                      <Col className="mb-5 pt-5" key={movie._id} md={3}>
+                      <Col
+                        className="mb-5 pt-5"
+                        key={movie._id}
+                        lg={3}
+                        md={4}
+                        sm={12}
+                      >
                         <MovieCard movie={movie} />
                       </Col>
                     ))}

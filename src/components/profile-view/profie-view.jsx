@@ -181,7 +181,7 @@ export const ProfileView = ({
                 <Button
                   variant="primary"
                   type="submit"
-                  className="mt-4 update-user-info-button"
+                  className="mt-4 mb-4 update-user-info-button"
                 >
                   Update Info
                 </Button>

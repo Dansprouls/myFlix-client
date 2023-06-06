@@ -16,6 +16,7 @@
 
 .movie-card .card-body {
   color: #000;
+  text-align: center;
   background-color: #ffe81f;
   flex-direction: column;
   justify-content: space-between;
@@ -29,6 +30,10 @@
   position: relative;
   color: #fff !important;
   background-color: #000 !important;
+}
+
+.open-btn:hover {
+  background-color: #000c !important;
 }
 
 * {
@@ -51,6 +56,37 @@ img {
 .title-bold {
   color: #ffe81f;
   font-weight: bold;
+}
+
+.movie-view-title {
+  text-align: center;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffe81f;
+  color: #000;
+  margin: 3rem auto;
+  font-style: italic;
+}
+
+.movie-details {
+  width: 100%;
+  background-color: #232b2b;
+  border: 2px solid #ffe81f;
+  border-radius: 2rem;
+  align-self: flex-start;
+  padding: 2rem;
+  position: relative;
+}
+
+.back-button {
+  color: #000;
+  background-color: #ffe81f;
+  border: 1px solid #000;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+}
+
+.back-button:hover {
+  background-color: #ffe81fb3;
 }
 
 .signup-form {
@@ -130,6 +166,10 @@ img {
 
 .navbar .nav-link {
   color: #fff !important;
+}
+
+.navbar .nav-link:hover {
+  color: #ffe81f !important;
 }
 
 .navbar .navbar-toggler {
