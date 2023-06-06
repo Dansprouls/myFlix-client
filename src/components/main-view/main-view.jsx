@@ -141,7 +141,7 @@ export const MainView = () => {
                       </Form>
                     </Row>
                     <h2 className="mt-5 main-title">
-                      Explore Everyone's Favorite Stories from a Galaxy Far, Far
+                      Explore Your Favorite Stories from a Galaxy Far, Far
                       Away...
                     </h2>
                     {filteredMovies.map((movie) => (
@@ -152,7 +152,12 @@ export const MainView = () => {
                         md={4}
                         sm={12}
                       >
-                        <MovieCard movie={movie} />
+                        <MovieCard
+                          movie={movie}
+                          user={user}
+                          updateUser={updateUser}
+                          token={token}
+                        />
                       </Col>
                     ))}
                   </>

@@ -94,7 +94,7 @@ export const ProfileView = ({
     <>
       <Row>
         <Col md={6}>
-          <Card className="h-100">
+          <Card>
             <Card.Body className="user-info-card">
               <Card.Title>Your User Info:</Card.Title>
               <Row>
@@ -196,7 +196,12 @@ export const ProfileView = ({
         </Col>
         {favoriteMovies.map((movie) => (
           <Col className="mb-4" key={movie._id}>
-            <MovieCard movie={movie} />
+            <MovieCard
+              movie={movie}
+              user={user}
+              token={token}
+              updateUser={updateUser}
+            />
           </Col>
         ))}
       </Row>

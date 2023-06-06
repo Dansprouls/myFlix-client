@@ -12,15 +12,25 @@
   text-align: center;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .open-btn {
   background-color: black !important;
   color: white !important;
   position: relative;
-  width: 100%;
   align-self: center;
   margin-top: auto;
+  width: 100%;
+  flex: auto;
 }
 
 .open-btn:hover {
   background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.add-remove-button {
+  flex: auto;
 }
